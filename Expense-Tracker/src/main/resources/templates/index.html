@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Expense Tracker</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Category</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="expense : ${expenses}">
+        <td th:text="${expense.category}"></td>
+        <td th:text="${expense.amount}"></td>
+    </tr>
+    </tbody>
+</table>
+<div style="text-align: center;">
+    <a href="/add-expense">Add New Expense</a>
+    <a href="/api/pdf/download">Download Expenses as PDF</a>
+</div>
+</body>
+</html>
